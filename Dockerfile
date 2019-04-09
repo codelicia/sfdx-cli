@@ -1,6 +1,6 @@
-FROM node:ubuntu
+FROM node:stretch-slim
 
-RUN apk add --update --no-cache git openssh ca-certificates openssl jq gettext xmlstarlet
+RUN apt update && apt install -y git openssh-server ca-certificates openssl jq gettext xmlstarlet
 
 RUN npm install sfdx-cli --global
 RUN sfdx --version
